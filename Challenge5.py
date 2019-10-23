@@ -4,7 +4,6 @@ import unittest
 import time
 #Asserts
 
-
 class Challenge5(unittest.TestCase):
 
     def setUp(self):
@@ -35,8 +34,6 @@ class Challenge5(unittest.TestCase):
             result = self.driver.find_element_by_xpath(f'(//span[@data-uname="lotsearchLotmodel"])[{i}]').text
             all_list.append(result)
 
-        print("This is the list with all the cars:")
-        print(all_list)
         time.sleep(5)
 
         for i in all_list:
@@ -46,5 +43,29 @@ class Challenge5(unittest.TestCase):
         print("This is the list without any repeated cars:")
         print(new_list)
 
+        damage_list = []
+        for i in range(1, 100):
+            result2 = self.driver.find_element_by_xpath(f'(//span[@data-uname="lotsearchLotdamagedescription"])[{i}]').text
+            damage_list.append(result2)
+        print(damage_list)
+
+        # rear = 0
+        # front = 0
+        # dent = 0
+        # under = 0
+        # misc = 0
+        #
+        # def add_damage(damage_list):
+        #     switcher = {
+        #         'REAR END': rear++,
+        #         'FRONT END': front++,
+        #         'MINOR DENT/SCRATCHES': dent++,
+        #         'UNDERCARRIAGE': under++,
+        #     }
+        #
+        #     return switcher.get(damage_list, misc++)
+
 if __name__ == '__main__':
+    # damage_list = 0
+    # print add_damage(damage_list)
     unittest.main()
