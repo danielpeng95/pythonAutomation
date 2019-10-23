@@ -5,7 +5,7 @@ import time
 #Asserts
 
 
-class Challenge2(unittest.TestCase):
+class Challenge5(unittest.TestCase):
 
     def setUp(self):
         self.driver = webdriver.Chrome("C:\\Users\\benpe\\DevMountain\\testing-resources\\chromedriver.exe")
@@ -28,14 +28,23 @@ class Challenge2(unittest.TestCase):
 
         self.driver.find_element_by_xpath('(//option[@value="100"])[1]').click()
 
+        all_list = []
+        new_list = []
+        time.sleep(5)
         for i in range(1, 100):
             result = self.driver.find_element_by_xpath(f'(//span[@data-uname="lotsearchLotmodel"])[{i}]').text
+            all_list.append(result)
 
-            print(result.text)
-        # self.driver.implicitly_wait(5)
-        # self.assertIn(result, "Porsche")
+        print("This is the list with all the cars:")
+        print(all_list)
         time.sleep(5)
 
+        for i in all_list:
+            if i not in new_list:
+                new_list.append(i)
+
+        print("This is the list without any repeated cars:")
+        print(new_list)
 
 if __name__ == '__main__':
     unittest.main()
