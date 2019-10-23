@@ -1,11 +1,6 @@
 from selenium import webdriver
 from selenium.webdriver.common.keys import Keys
 import unittest
-from selenium.webdriver.common.by import By
-from selenium.webdriver.support.ui import WebDriverWait
-from selenium.webdriver.support import expected_conditions as cond
-from selenium.common.exceptions import NoAlertPresentException
-from selenium.common.exceptions import TimeoutException
 
 class Challenge1(unittest.TestCase):
 
