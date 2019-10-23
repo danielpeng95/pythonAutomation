@@ -1,6 +1,7 @@
 from selenium import webdriver
 from selenium.webdriver.common.keys import Keys
 import unittest
+import time
 
 class Challenge1(unittest.TestCase):
 
@@ -19,6 +20,7 @@ class Challenge1(unittest.TestCase):
         self.driver.get("https://www.google.com")
         assert 'Google' in self.driver.title
         self.assertIn("Google", self.driver.title)
+        time.sleep(5)
 
 
         # self.driver.find_element_by_name('q').send_keys("Puppies")

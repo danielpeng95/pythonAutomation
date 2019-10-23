@@ -1,6 +1,7 @@
 from selenium import webdriver
 from selenium.webdriver.common.keys import Keys
 import unittest
+import time
 #Loops
 
 class Challenge3(unittest.TestCase):
@@ -25,6 +26,8 @@ class Challenge3(unittest.TestCase):
         for i in range(1, 6):
             locator = self.driver.find_element_by_xpath(f'(//li[@ng-repeat="popularSearch in popularSearches | limitTo: 5 : 5"])[{i}]')
             print(locator.text)
+
+        time.sleep(5)
 
 if __name__ == '__main__':
     unittest.main()
