@@ -19,12 +19,12 @@ class Challenge3(unittest.TestCase):
         self.driver.get("https://www.copart.com")
 
         self.driver.implicitly_wait(10)
-        for i in range(1, 6):
-            locator = self.driver.find_element_by_xpath(f'(//li[@ng-repeat="popularSearch in popularSearches | limitTo: 5"])[{i}]')
-            print(locator.text)
+        # for i in range(1, 6):
+        #     locator = self.driver.find_element_by_xpath(f'(//li[@ng-repeat="popularSearch in popularSearches | limitTo: 5"])[{i}]')
+        #     print(locator.text)
 
-        for i in range(1, 6):
-            locator = self.driver.find_element_by_xpath(f'(//li[@ng-repeat="popularSearch in popularSearches | limitTo: 5 : 5"])[{i}]')
+        for i in range(1, 5):
+            locator = self.driver.find_element_by_xpath(f'(//div[@class="col-lg-3 col-sm-3 col-md-3 col-xs-6 col-xs-ext-sm"])[{i}]')
             print(locator.text)
 
         time.sleep(5)
