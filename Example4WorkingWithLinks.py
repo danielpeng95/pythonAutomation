@@ -17,29 +17,17 @@ class Example(unittest.TestCase):
         self.driver.close()
 
     def test_challenge(self):
-        self.driver.get("https://fs2.formsite.com/meherpavan/form2/index.html?1537702596407")
+        self.driver.get("http://newtours.demoaut.com/")
         self.driver.implicitly_wait(10)
+        links = self.driver.find_element_by_tag_name("a")
+        #BELOW DOESN'T WORK
+        # print(len(links))
+        # print("Number of links present in a page:", len(links))
+        # for link in links:
+        #     print(link.text)
 
-        element = self.driver.find_element_by_id("RESULT_RadioButton-9")
-        drp = Select(element)
-        #select by visible text
-        drp.select_by_visible_text('Morning') #Morning
-        time.sleep(2)
-
-        #select by index number
-        drp.select_by_index(2) #Afternoon
-        time.sleep(2)
-
-        #select by value
-        drp.select_by_value("Radio-2") #Evening
-        time.sleep(2)
-
-        print(len(drp.options))
-
-        #capture all the options and print them as output
-        all_options = drp.options
-        for option in all_options:
-            print(option.text)
+        #clicking on the link
+        self.driver.find_element(By.LINK_TEXT, "REGISTER").click()
 
         time.sleep(2)
 
