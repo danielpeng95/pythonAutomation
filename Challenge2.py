@@ -1,8 +1,11 @@
 from selenium import webdriver
 from selenium.webdriver.common.keys import Keys
 import unittest
+from selenium.webdriver.common.by import By
 import time
+from selenium.webdriver.support import expected_conditions as EC
 #Asserts
+from selenium.webdriver.support.wait import WebDriverWait
 
 
 class Challenge2(unittest.TestCase):
@@ -21,7 +24,7 @@ class Challenge2(unittest.TestCase):
 
         self.driver.implicitly_wait(10)
         self.driver.find_element_by_id("input-search").send_keys("exotics")
-        self.driver.find_element_by_xpath('(//button[@type="submit"])[2]').click()
+        self.driver.find_element(By.XPATH, '(//button[@type="submit"])[2]').click()
 
         self.driver.implicitly_wait(10)
         result = self.driver.find_element_by_xpath('(//span[@data-uname="lotsearchLotmake"])[1]').text

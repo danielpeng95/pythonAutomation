@@ -16,7 +16,6 @@ class Challenge1(unittest.TestCase):
         self.driver.close()
 
     def test_challenge1(self):
-
         self.driver.get("https://www.google.com")
         assert 'Google' in self.driver.title
         self.assertIn("Google", self.driver.title)
