@@ -23,10 +23,10 @@ class Example(unittest.TestCase):
         print(len(inputboxes))
 
         status = self.driver.find_element(By.ID, 'RESULT_TextField-1').is_displayed()
-        print(status)
+        print("Displayed: ", status)
 
         status = self.driver.find_element(By.ID, 'RESULT_TextField-1').is_enabled()
-        print(status)
+        print("Enabled: ", status)
 
         self.driver.find_element(By.ID, 'RESULT_TextField-1').send_keys("Daniel")
         self.driver.find_element(By.ID, 'RESULT_TextField-2').send_keys("Peng")
