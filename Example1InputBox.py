@@ -19,15 +19,19 @@ class Example(unittest.TestCase):
         self.driver.get("https://fs2.formsite.com/meherpavan/form2/index.html?1537702596407")
         self.driver.implicitly_wait(10)
 
+        #finding out how many input boxes there are
         inputboxes = self.driver.find_elements(By.CLASS_NAME, 'text_field')
         print(len(inputboxes))
 
+        #finding the status of the display input
         status = self.driver.find_element(By.ID, 'RESULT_TextField-1').is_displayed()
         print("Displayed: ", status)
 
+        #finding the status of the enabled input
         status2 = self.driver.find_element(By.ID, 'RESULT_TextField-1').is_enabled()
         print("Enabled: ", status2)
 
+        #inserting information to the input box (text field)
         self.driver.find_element(By.ID, 'RESULT_TextField-1').send_keys("Daniel")
         self.driver.find_element(By.ID, 'RESULT_TextField-2').send_keys("Peng")
         self.driver.find_element_by_id("RESULT_TextField-3").send_keys("1234567890")
