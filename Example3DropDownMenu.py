@@ -36,6 +36,10 @@ class Example(unittest.TestCase):
 
         print(len(drp.options))
 
+        #capture all the options and print them as output
+        all_options = drp.options
+        for option in all_options:
+            print(option.text)
 
         time.sleep(2)
 
