@@ -31,6 +31,10 @@ class Example(unittest.TestCase):
         status2 = self.driver.find_element_by_xpath('(//label[@for="RESULT_RadioButton-7_0"])').is_enabled()
         print("Selected: ", status2)
 
+        self.driver.find_element_by_xpath('(//label[@for="RESULT_CheckBox-8_0"])').click()
+        self.driver.find_element_by_xpath('(//label[@for="RESULT_CheckBox-8_6"])').click()
+
+
         time.sleep(3)
 
 
