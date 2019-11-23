@@ -23,11 +23,11 @@ class Example(unittest.TestCase):
         element = self.driver.find_element_by_id("RESULT_RadioButton-9")
         drp = Select(element)
         #select by visible text
-        drp.select_by_visible_text('Morning')
+        drp.select_by_visible_text('Morning') #Morning
         time.sleep(2)
 
         #select by index number
-        drp.select_by_index(1) #Afternoon
+        drp.select_by_index(2) #Afternoon
         time.sleep(2)
 
         #select by value
