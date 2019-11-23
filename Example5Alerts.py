@@ -20,8 +20,19 @@ class Example(unittest.TestCase):
         self.driver.get("https://testautomationpractice.blogspot.com")
         self.driver.implicitly_wait(10)
 
+        self.driver.find_element_by_xpath('//button[@onclick="myFunction()"]').click()
         time.sleep(3)
 
+        #closes alert window using OK button
+        self.driver.switch_to_alert().accept()
+
+        self.driver.find_element_by_xpath('//button[@onclick="myFunction()"]').click()
+        time.sleep(3)
+
+        #closes alert window by using Cancel button
+        self.driver.switch_to_alert().dismiss()
+
+        time.sleep(3)
 
 if __name__ == '__main__':
     unittest.main()
