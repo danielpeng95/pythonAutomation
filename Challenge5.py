@@ -15,7 +15,7 @@ class Challenge5(unittest.TestCase):
     def tearDown(self):
         self.driver.close()
 
-    def test_challenge1(self):
+    def test_challenge5(self):
         self.driver.get("https://www.copart.com")
 
         self.driver.implicitly_wait(10)

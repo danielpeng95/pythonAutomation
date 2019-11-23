@@ -1,14 +1,13 @@
 from selenium import webdriver
+from selenium.webdriver.common.by import By
 from selenium.webdriver.common.keys import Keys
 import unittest
-from selenium.webdriver.common.by import By
 import time
 from selenium.webdriver.support import expected_conditions as EC
-#Asserts
 from selenium.webdriver.support.ui import WebDriverWait
 
 
-class Challenge2(unittest.TestCase):
+class Example(unittest.TestCase):
 
     def setUp(self):
         self.driver = webdriver.Chrome("C:\\Users\\benpe\\DevMountain\\testing-resources\\chromedriver.exe")
@@ -19,18 +18,19 @@ class Challenge2(unittest.TestCase):
     def tearDown(self):
         self.driver.close()
 
-    def test_challenge2(self):
-        self.driver.get("https://www.copart.com")
-
+    def Example(self):
+        self.driver.get("https://fs2.formsite.com/meherpavan/form2/index.html?1537702596407")
         self.driver.implicitly_wait(10)
-        self.driver.find_element_by_id("input-search").send_keys("exotics")
-        self.driver.find_element(By.XPATH, '(//button[@type="submit"])[2]').click()
 
-        self.driver.implicitly_wait(10)
-        result = self.driver.find_element_by_xpath('(//span[@data-uname="lotsearchLotmake"])[1]').text
+        inputboxes = self.driver.find_elements(By.CLASS_NAME, 'text_field')
+        print(len(inputboxes))
 
-        self.driver.implicitly_wait(5)
-        self.assertIn(result, "Porsche")
+        self.driver.find_element(By.ID, 'RESULT_TextField-1').send_keys("Daniel")
+        self.driver.find_element(By.ID, 'RESULT_TextField-2').send_keys("Peng")
+        self.driver.find_element_by_id("RESULT_TextField-3").send_keys("1234567890")
+
+
+
         time.sleep(5)
 
 

@@ -6,7 +6,7 @@ import time
 
 #Fibonacci
 
-class Challenge5(unittest.TestCase):
+class Challenge4(unittest.TestCase):
 
     def setUp(self):
         self.driver = webdriver.Chrome("C:\\Users\\benpe\\DevMountain\\testing-resources\\chromedriver.exe")
@@ -17,7 +17,7 @@ class Challenge5(unittest.TestCase):
     def tearDown(self):
         self.driver.close()
 
-    def test_challenge1(self):
+    def test_challenge4(self):
         p = inflect.engine()
 
         #Recursive function to print Fibonacci sequence
