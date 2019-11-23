@@ -34,7 +34,6 @@ class Example(unittest.TestCase):
         self.driver.find_element_by_xpath('(//label[@for="RESULT_CheckBox-8_0"])').click()
         self.driver.find_element_by_xpath('(//label[@for="RESULT_CheckBox-8_6"])').click()
 
-
         time.sleep(3)
 
 
