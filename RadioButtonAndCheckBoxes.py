@@ -19,19 +19,19 @@ class Example(unittest.TestCase):
         self.driver.get("https://fs2.formsite.com/meherpavan/form2/index.html?1537702596407")
         self.driver.implicitly_wait(10)
 
-        inputboxes = self.driver.find_elements(By.CLASS_NAME, 'text_field')
-        print(len(inputboxes))
+        status = self.driver.find_element_by_xpath('(//label[@for="RESULT_RadioButton-7_0"])').is_selected()
+        print("Selected: ", status)
 
-        status = self.driver.find_element(By.ID, 'RESULT_TextField-1').is_displayed()
-        print("Displayed: ", status)
+        time.sleep(2)
 
-        status = self.driver.find_element(By.ID, 'RESULT_TextField-1').is_enabled()
-        print("Enabled: ", status)
+        self.driver.find_element_by_xpath('(//label[@for="RESULT_RadioButton-7_0"])').click()
 
-        self.driver.find_element(By.ID, 'RESULT_TextField-1').send_keys("Daniel")
-        self.driver.find_element(By.ID, 'RESULT_TextField-2').send_keys("Peng")
-        self.driver.find_element_by_id("RESULT_TextField-3").send_keys("1234567890")
-        time.sleep(5)
+        time.sleep(2)
+
+        status2 = self.driver.find_element_by_xpath('(//label[@for="RESULT_RadioButton-7_0"])').is_enabled()
+        print("Selected: ", status2)
+
+        time.sleep(3)
 
 
 if __name__ == '__main__':
