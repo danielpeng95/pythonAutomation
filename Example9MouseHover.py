@@ -32,10 +32,6 @@ class Example(unittest.TestCase):
         actions = ActionChains(self.driver)
         actions.move_to_element(admin).move_to_element(usermgnt).move_to_element(users).click().perform()
 
-
-
-
-
         time.sleep(3)
 
 if __name__ == '__main__':
