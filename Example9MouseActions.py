@@ -21,6 +21,7 @@ class Example(unittest.TestCase):
 
         self.driver.find_element_by_xpath('//*[@id="divUsername"]/span').send_keys("Admin")
         self.driver.find_element_by_xpath('//*[@id="txtPassword"]').send_keys("admin123")
+        self.driver.find_element_by_xpath('//*[@id="btnLogin"]').click()
 
 
         time.sleep(3)
