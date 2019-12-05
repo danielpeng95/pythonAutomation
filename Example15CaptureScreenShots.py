@@ -16,8 +16,10 @@ class Example(unittest.TestCase):
         self.driver.close()
 
     def test_challenge(self):
-        self.driver.get("")
+        self.driver.get("http://newtours.demoaut.com/mercurywelcome.php")
         self.driver.implicitly_wait(10)
+
+        self.driver.save_screenshot("C:\PycharmProjects\ScreenShots\homePage.jpeg")
 
         time.sleep(3)
 
