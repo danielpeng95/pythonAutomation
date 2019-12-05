@@ -15,7 +15,7 @@ class Example(unittest.TestCase):
     def tearDown(self):
         self.driver.close()
 
-    def test_challenge(self):
+    def test_example(self):
         self.driver.get("http://demo.automationtesting.in/FileDownload.html")
         self.driver.implicitly_wait(10)
 
