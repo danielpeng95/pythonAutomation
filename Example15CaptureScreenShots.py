@@ -20,10 +20,10 @@ class Example(unittest.TestCase):
         self.driver.implicitly_wait(10)
 
         #first way to screen shot
-        self.driver.save_screenshot("C:\PycharmProjects\ScreenShots\homePage.png")
+        self.driver.save_screenshot("C://Users/benpe/PycharmProjects/firstExample/ScreenShots/homepage.png")
 
         #second way to screen shot
-        self.driver.get_screenshot_as_file("C:\PycharmProjects\ScreenShots\homePage2.png")
+        self.driver.get_screenshot_as_file("C://Users/benpe/PycharmProjects/firstExample/ScreenShots/homepage2.png")
 
         time.sleep(3)
 
