@@ -19,7 +19,11 @@ class Example(unittest.TestCase):
         self.driver.get("http://newtours.demoaut.com/mercurywelcome.php")
         self.driver.implicitly_wait(10)
 
-        self.driver.save_screenshot("C:\PycharmProjects\ScreenShots\homePage.jpeg")
+        #first way to screen shot
+        self.driver.save_screenshot("C:\PycharmProjects\ScreenShots\homePage.png")
+
+        #second way to screen shot
+        self.driver.get_screenshot_as_file("C:\PycharmProjects\ScreenShots\homePage2.png")
 
         time.sleep(3)
 
