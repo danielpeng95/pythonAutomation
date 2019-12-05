@@ -19,7 +19,10 @@ class Example(unittest.TestCase):
         self.driver.implicitly_wait(10)
 
         #it logs it into a file
-        logging.basicConfig(filename="C://Users/benpe/PycharmProjects/firstExample/test.log")
+        logging.basicConfig(filename="C://Users/benpe/PycharmProjects/firstExample/test.log",
+                            format='%(asctime)s: %(levelname)s: %(message)s',
+                            datefmt='%m/%d/%Y %I:%M:%S %P', level=logging.DEBUG
+                            )
 
         logging.debug("This is debug message")
         logging.info("This is info message")
