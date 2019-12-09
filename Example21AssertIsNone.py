@@ -1,6 +1,7 @@
 import unittest
 from selenium import webdriver
 
+
 class Test(unittest.TestCase):
     def testName(self):
         self.driver = webdriver.Chrome("C:\\Users\\benpe\\DevMountain\\testing-resources\\chromedriver.exe")
@@ -8,6 +9,7 @@ class Test(unittest.TestCase):
 
         self.driver = None
         self.assertIsNone(self.driver)
+
 
 if __name__ == "__main__":
     unittest.main()
